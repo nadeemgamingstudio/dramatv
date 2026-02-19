@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Chinese Short Drama TV · डाउनलोड</title>
+  <!-- Google Fonts & Font Awesome for icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #540c1f 0%, #ad2b3e 50%, #f8c26b 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    /* Decorative floating elements */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(255,215,140,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -20px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(230,57,70,0.35) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 3.5rem 3.5rem 2.5rem 2.5rem;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+      padding: 2.2rem 2rem 1.8rem;
+      position: relative;
+      z-index: 10;
+      border: 2px solid rgba(255, 240, 190, 0.7);
+      transition: transform 0.2s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.01);
+    }
+
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 15px 25px -8px rgba(0,0,0,0.5), 0 0 0 5px #ffd966, 0 0 0 9px #b3413d;
+      background: white;
+      object-fit: cover;
+      transition: all 0.2s;
+    }
+
+    .app-icon:hover {
+      box-shadow: 0 20px 30px -6px black, 0 0 0 5px #f1c40f, 0 0 0 9px #9e2a2b;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-align: center;
+      background: linear-gradient(135deg, #a71e2f, #cf5135, #f4a950);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+      text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.2);
+    }
+
+    .badge {
+      background: #1e1e2f;
+      color: #f8d35f;
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 0.5rem auto 1rem;
+      box-shadow: 0 4px 0 #0b0b12, 0 8px 15px rgba(230, 57, 70, 0.5);
+      border: 1px solid #f5c84e;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #2c1810;
+      font-weight: 500;
+      text-align: center;
+      max-width: 550px;
+      margin: 0 auto 2rem auto;
+      background: rgba(255, 255, 200, 0.6);
+      padding: 0.7rem 1.2rem;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 1px 5px rgba(255,255,220,0.8), 0 8px 12px rgba(110, 30, 30, 0.2);
+      border-left: 6px solid #c44536;
+      border-right: 6px solid #f7b267;
+    }
+
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2.5rem 0 1.8rem;
+    }
+
+    .step-card {
+      background: rgba(255, 250, 240, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: 2rem 2rem 2rem 2rem;
+      padding: 1.3rem 1.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      box-shadow: 0 12px 25px -10px #3b1717, 0 0 0 2px #fee1aa, 0 0 0 5px #ba2d2d;
+      transition: all 0.25s;
+      border: 1px solid #ffcf8a;
+    }
+
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 30px -12px #2f0e0e, 0 0 0 2px #ffbe5c, 0 0 0 5px #a51d1d;
+    }
+
+    .step-number {
+      background: linear-gradient(140deg, #e63e3e, #bb2f2f);
+      width: 58px;
+      height: 58px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: white;
+      text-shadow: 3px 3px 0 #731212;
+      box-shadow: 0 8px 0 #631c1c, 0 10px 20px rgba(0,0,0,0.3);
+      border: 2px solid #fad275;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: #2d0a0a;
+      line-height: 1.2;
+    }
+
+    .step-content p {
+      color: #3b1e1e;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0.9rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.2s all;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 15px -6px #262626;
+      letter-spacing: 0.3px;
+      border: 2px solid transparent;
+    }
+
+    .btn i {
+      font-size: 1.6rem;
+    }
+
+    .btn-group {
+      background: #2a6f97;  /* deep google-ish blue */
+      color: white;
+      box-shadow: 0 12px 0 #124559, 0 8px 20px #00171f;
+    }
+
+    .btn-group:hover {
+      background: #1f5780;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 0 #0b3649, 0 12px 25px black;
+    }
+
+    .btn-download {
+      background: #f58b33;  /* vibrant orange */
+      color: #1e1a1a;
+      box-shadow: 0 12px 0 #b6490e, 0 8px 20px #3f1d08;
+    }
+
+    .btn-download:hover {
+      background: #e6761f;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 0 #9b3d0b, 0 12px 25px #321505;
+    }
+
+    .note-card {
+      background: #ffefc0;
+      border-radius: 30px;
+      padding: 1.2rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-left: 15px solid #cb6e2e;
+      border-right: 5px solid #ffe49b;
+      margin-top: 2rem;
+      font-weight: 600;
+      color: #3e1b10;
+      box-shadow: inset 0 2px 8px #fde5a9, 0 12px 15px -10px #6b2d2d;
+    }
+
+    .note-card i {
+      font-size: 2.4rem;
+      color: #ac3a2e;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2.2rem;
+      color: #311c0c;
+      font-weight: 600;
+      background: rgba(255, 225, 140, 0.6);
+      padding: 0.7rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid #eeb76b;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      body { padding: 0.8rem; }
+      .container { padding: 1.5rem 1rem; border-radius: 2.5rem; }
+      h1 { font-size: 1.9rem; }
+      .step-card { flex-direction: column; align-items: center; text-align: center; gap: 0.8rem; padding: 1.5rem 1rem; }
+      .step-number { width: 50px; height: 50px; font-size: 1.9rem; }
+      .step-content h3 { font-size: 1.6rem; }
+      .btn { width: 100%; padding: 0.8rem 1rem; font-size: 1.1rem; }
+      .note-card { flex-direction: column; text-align: center; }
+      .app-icon { width: 100px; height: 100px; }
+      .badge { font-size: 0.8rem; }
+    }
+
+    @media (max-width: 380px) {
+      h1 { font-size: 1.6rem; }
+      .btn i { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- App Icon -->
+  <div class="icon-wrapper">
+    <img class="app-icon" src="https://lh3.googleusercontent.com/1uwy4kpcH9qGZopdGk3D4n5ER-L9h30FUwKhG487jgkln8QLEWlZAESfvhsXFtwaiMLLPgwh2Czlz5U1OSIxCw" alt="Chinese Short Drama TV logo">
+  </div>
+
+  <!-- App Name & Status -->
+  <h1>Chinese Short Drama TV</h1>
+  <div style="text-align: center;">
+    <span class="badge"><i class="fas fa-flask" style="margin-right: 8px;"></i> क्लोज टेस्टिंग · केवल मेंबर्स के लिए</span>
+  </div>
+  <p class="tagline">
+    <i class="fas fa-dragon" style="margin-right: 10px; color: #c9362b;"></i> चाइनीज़ ड्रामा हिंदी में 
+    <i class="fas fa-clapperboard" style="margin-left: 10px; color: #f1802b;"></i>
+  </p>
+
+  <!-- Steps with style -->
+  <div class="steps-container">
+    <!-- STEP 1 : GOOGLE GROUP -->
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>📢 गूगल ग्रुप ज्वाइन करें</h3>
+        <p><i class="fas fa-check-circle" style="color:#2b7a2b;"></i> टेस्टर बनने के लिए यह ज़रूरी है। नीचे दिए बटन से ग्रुप जॉइन करें।</p>
+        <a href="https://groups.google.com/g/nadeemgamingstudio" target="_blank" class="btn btn-group">
+          <i class="fab fa-google"></i> Join 'Nadeem Gaming Studio' 
+          <i class="fas fa-arrow-right-to-bracket" style="font-size: 1.1rem;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- STEP 2 : DOWNLOAD APP -->
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>📲 अब डाउनलोड करें एप</h3>
+        <p><i class="fas fa-shield-alt" style="color:#aa4e1c;"></i> ग्रुप जॉइन करने के बाद यहाँ से इंस्टॉल करें (प्ले स्टोर खुलेगा)।</p>
+        <a href="https://play.google.com/store/apps/details?id=com.nadeemgs.dramatv" target="_blank" class="btn btn-download">
+          <i class="fab fa-google-play"></i> Google Play से डाउनलोड करें
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Important Note about same account -->
+  <div class="note-card">
+    <i class="fas fa-circle-exclamation"></i>
+    <span><strong style="font-size: 1.2rem;">⚠️ ध्यान दें :</strong> ग्रुप ज्वाइन करने के लिए जिस जीमेल अकाउंट का इस्तेमाल करें, <u>उसी अकाउंट से प्ले स्टोर में लॉगिन रखें</u>। तभी डाउनलोड लिंक काम करेगा।</span>
+  </div>
+
+  <!-- extra info: closed testing tag & studio -->
+  <div class="footer">
+    <p><i class="fas fa-copyright"></i> 2025 Nadeem Gaming Studio  |  <i class="fas fa-video"></i> Chinese Short Drama TV  |  क्लोज टेस्टिंग v1.0.2</p>
+    <p style="font-size: 0.9rem; margin-top: 6px; opacity: 0.8;">
+      <i class="fas fa-star" style="color: #c44536;"></i>  स्टाइलिश · तेज़ · नाटकों से भरपूर  <i class="fas fa-star" style="color: #c44536;"></i>
+    </p>
+  </div>
+</div>
+
+<!-- subtle extra polish: wave effect? just a clean end -->
+</body>
+</html>
