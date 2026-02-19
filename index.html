@@ -10,7 +10,7 @@
             --secondary-color: #ff4b2b;
             --bg-color: #0f0c29;
             --text-color: #ffffff;
-            --google-blue: #4285F4;
+            --google-blue: #4285F4; /* हल्का नीला कलर */
         }
 
         * {
@@ -65,6 +65,14 @@
             margin-bottom: 15px;
             font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p.main-desc {
+            font-size: 15px;
+            color: #ddd;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
         .step-box {
@@ -74,6 +82,12 @@
             margin-bottom: 20px;
             text-align: left;
             border-left: 4px solid var(--primary-color);
+        }
+
+        .step-num {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 10px;
         }
 
         .btn {
@@ -89,27 +103,30 @@
             font-size: 16px;
         }
 
+        /* हल्का नीला बटन स्टाइल */
         .btn-group {
             background: var(--google-blue);
             color: white;
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
         }
 
         .btn-playstore {
             background: linear-gradient(to right, #ff416c, #ff4b2b);
             color: white;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
         }
 
         .btn:hover {
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             filter: brightness(1.1);
         }
 
         .note-text {
-            font-size: 11px;
-            color: #ffcc00;
-            margin-top: 8px;
-            display: block;
-            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 5px;
+            font-style: italic;
         }
 
         .footer {
@@ -118,6 +135,7 @@
             color: #888;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -127,25 +145,28 @@
         <h1>Chinese Short Drama TV</h1>
         <div class="sub-text">High Quality Video Player</div>
         
+        <p class="main-desc">
+            इस ऐप में आपको मिलेंगे बेहतरीन शॉर्ट ड्रामा वीडियो, वो भी एकदम हाई क्वालिटी में! यहाँ रोज नए-नए वीडियो अपलोड होते हैं।
+        </p>
+
         <div class="step-box">
-            <p><strong style="color: #ff416c;">स्टेप 1:</strong> गूगल ग्रुप ज्वाइन करें</p>
-            
+            <p style="color: #fff;"><span class="step-num">स्टेप 1:</span> सबसे पहले नीचे दिए बटन से गूगल ग्रुप को ज्वाइन करें।</p>
             <a href="intent://groups.google.com/g/nadeemgamingstudio#Intent;scheme=https;package=com.android.chrome;end" class="btn btn-group">
                 Join Google Group
             </a>
-            
-            <span class="note-text">अगर बटन काम न करे तो ऊपर 3 डॉट्स पर क्लिक करके "Open in Browser" चुनें।</span>
+            <p class="note-text">* क्लोज टेस्टिंग के लिए ग्रुप ज्वाइन करना अनिवार्य है।</p>
         </div>
 
         <div class="step-box">
-            <p><strong style="color: #ff416c;">स्टेप 2:</strong> प्ले स्टोर से डाउनलोड करें</p>
+            <p style="color: #fff;"><span class="step-num">स्टेप 2:</span> ग्रुप ज्वाइन करने के बाद नीचे से ऐप डाउनलोड करें।</p>
             <a href="https://play.google.com/store/apps/details?id=com.nadeemgs.dramatv" target="_blank" class="btn btn-playstore">
                 Download From Play Store
             </a>
+            <p class="note-text">* ग्रुप ज्वाइन होने के बाद ही प्ले स्टोर पर ऐप ओपन होगा।</p>
         </div>
 
         <div class="footer">
-            © 2026 Nadeem Gaming Studio
+            © 2026 Nadeem Gaming Studio | All Rights Reserved
         </div>
     </div>
 
