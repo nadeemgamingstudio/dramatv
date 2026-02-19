@@ -2,8 +2,10 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Download Chinese Short Drama TV</title>
+    <!-- Font Awesome for extra colorful icons (only visual, text unchanged) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: #ff416c;
@@ -21,121 +23,233 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(145deg, #0f0c29, #302b63, #24243e, #1a1a40);
+            background-size: 400% 400%;
+            animation: gradientWave 12s ease infinite;
             color: var(--text-color);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 16px;
+        }
+
+        @keyframes gradientWave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 30px;
+            background: rgba(20, 10, 40, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 100, 150, 0.5);
+            padding: 35px 25px;
+            border-radius: 50px;
             text-align: center;
-            max-width: 500px;
+            max-width: 520px;
             width: 100%;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 50px rgba(255, 65, 108, 0.4), 0 0 0 2px #ffb6c1 inset, 0 0 15px #ff69b4;
+            transition: transform 0.2s;
+        }
+
+        .container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 35px 60px #ff416c, 0 0 0 3px gold inset;
         }
 
         .app-icon {
             width: 120px;
             height: 120px;
-            border-radius: 25px;
+            border-radius: 30px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            border: 3px solid #ff416c;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.6), 0 0 0 6px #ffd966, 0 0 0 10px #ff416c;
+            border: 2px solid white;
+            transition: 0.2s;
+        }
+
+        .app-icon:hover {
+            box-shadow: 0 25px 35px black, 0 0 0 6px gold, 0 0 0 12px #ff2e5b;
         }
 
         h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            background: -webkit-linear-gradient(#ff416c, #ff4b2b);
+            font-size: 32px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fcee98, #ffb347, #ff6b8b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            text-shadow: 0 0 20px #ff9f4d;
         }
 
         .sub-text {
-            font-size: 14px;
-            color: #ffcc00;
+            font-size: 15px;
+            color: #ffecaa;
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            background: #1e1e3f;
+            display: inline-block;
+            padding: 5px 18px;
+            border-radius: 40px;
+            box-shadow: 0 0 15px #ffb347;
         }
 
         p.main-desc {
-            font-size: 15px;
-            color: #ddd;
+            font-size: 16px;
+            color: #f0e6ff;
             margin-bottom: 25px;
-            line-height: 1.6;
+            line-height: 1.7;
+            background: rgba(255, 165, 0, 0.15);
+            padding: 15px 20px;
+            border-radius: 40px;
+            border-left: 6px solid #ffb347;
+            border-right: 6px solid #ff6b8b;
+            font-weight: 500;
         }
 
         .step-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
+            background: linear-gradient(125deg, rgba(255, 65, 108, 0.25), rgba(75, 0, 130, 0.4));
+            padding: 22px 20px;
+            border-radius: 40px;
+            margin-bottom: 25px;
             text-align: left;
-            border-left: 4px solid var(--primary-color);
+            border-left: 8px solid #ffd966;
+            border-right: 8px solid #ffb6c1;
+            box-shadow: 0 10px 30px #ff4b2b;
+            backdrop-filter: blur(10px);
         }
 
         .step-num {
-            font-weight: bold;
-            color: var(--primary-color);
+            font-weight: 800;
+            color: #ffecaa;
             margin-right: 10px;
+            background: #b22222;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 0 #4a0c0c;
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px 25px;
-            margin: 15px 0 5px 0;
-            border-radius: 50px;
+            gap: 10px;
+            padding: 15px 22px;
+            margin: 18px 0 6px 0;
+            border-radius: 60px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            font-size: 17px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;         /* forces single line */
+            border: 2px solid transparent;
         }
 
         /* हल्का नीला बटन स्टाइल */
         .btn-group {
             background: var(--google-blue);
             color: white;
-            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+            box-shadow: 0 12px 0 #0f3b7a, 0 15px 25px #001d3d;
+            border: 1px solid #9ac8ff;
         }
 
         .btn-playstore {
-            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            background: linear-gradient(to right, #ff416c, #ff8c42);
             color: white;
-            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            box-shadow: 0 12px 0 #9b2a2a, 0 15px 30px #4a0f0f;
+            border: 1px solid #ffc107;
+        }
+
+        .btn i {
+            font-size: 1.5rem;
+            filter: drop-shadow(0 2px 2px black);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            filter: brightness(1.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 0 #0b2b4f, 0 20px 30px black;
+            filter: brightness(1.2);
+            border-color: gold;
+        }
+
+        .btn-playstore:hover {
+            box-shadow: 0 15px 0 #7e1f1f, 0 20px 30px black;
         }
 
         .note-text {
-            font-size: 12px;
-            color: #aaa;
-            margin-top: 5px;
+            font-size: 13px;
+            color: #ffde9e;
+            margin-top: 8px;
             font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 12px;
+            border-radius: 30px;
         }
 
         .footer {
-            margin-top: 30px;
-            font-size: 12px;
-            color: #888;
+            margin-top: 35px;
+            font-size: 14px;
+            color: #f5c7b8;
+            background: #1d1135;
+            padding: 10px 20px;
+            border-radius: 60px;
+            border: 2px solid #ffa07a;
+            font-weight: 500;
+        }
+
+        /* === मोबाइल के लिए सटीक फिक्स: बटन का टेक्स्ट एक लाइन में === */
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 18px;
+            }
+            .btn {
+                padding: 14px 12px;        /* थोड़ा कम padding */
+                font-size: 15px;            /* फॉन्ट साइज घटाया नहीं, बल्कि smart fit */
+                white-space: nowrap;
+                width: 100%;
+                gap: 6px;
+            }
+            .btn i {
+                font-size: 1.3rem;
+            }
+            /* सुनिश्चित करें कि कभी भी टेक्स्ट न टूटे */
+            .step-box {
+                padding: 20px 15px;
+            }
+            .note-text {
+                font-size: 11.5px;
+                flex-wrap: wrap;
+            }
+        }
+
+        /* छोटी स्क्रीन पर भी एक लाइन बनाए रखना */
+        @media (max-width: 380px) {
+            .btn {
+                font-size: 13.5px;
+                padding: 12px 8px;
+            }
+            .btn i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* और छोटी स्क्रीन (जैसे 320px) पर भी सेफ */
+        @media (max-width: 340px) {
+            .btn {
+                font-size: 12px;
+                padding: 10px 5px;
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -150,24 +264,24 @@
         </p>
 
         <div class="step-box">
-            <p style="color: #fff;"><span class="step-num">स्टेप 1:</span> सबसे पहले नीचे दिए बटन से गूगल ग्रुप को ज्वाइन करें।</p>
+            <p style="color: #fff; display: flex; align-items: center; gap: 5px; flex-wrap: wrap;"><span class="step-num">स्टेप 1:</span> <span>सबसे पहले नीचे दिए बटन से गूगल ग्रुप को ज्वाइन करें।</span></p>
             <a href="intent://groups.google.com/g/nadeemgamingstudio#Intent;scheme=https;package=com.android.chrome;end" class="btn btn-group">
-                Join Google Group
+                <i class="fab fa-google"></i> Join Google Group <i class="fas fa-arrow-right"></i>
             </a>
-            <p class="note-text">* बटन पर क्लिक करने के बाद Continue पर क्लिक करें</p>
-            <p class="note-text">* ऐप्स डाउनलोड करने के लिए ग्रुप ज्वाइन करना अनिवार्य है।</p>
+            <p class="note-text"><i class="fas fa-info-circle"></i> * बटन पर क्लिक करने के बाद Continue पर क्लिक करें</p>
+            <p class="note-text"><i class="fas fa-shield-alt"></i> * ऐप्स डाउनलोड करने के लिए ग्रुप ज्वाइन करना अनिवार्य है।</p>
         </div>
 
         <div class="step-box">
-            <p style="color: #fff;"><span class="step-num">स्टेप 2:</span> ग्रुप ज्वाइन करने के बाद नीचे से ऐप डाउनलोड करें।</p>
+            <p style="color: #fff; display: flex; align-items: center; gap: 5px; flex-wrap: wrap;"><span class="step-num">स्टेप 2:</span> <span>ग्रुप ज्वाइन करने के बाद नीचे से ऐप डाउनलोड करें।</span></p>
             <a href="https://play.google.com/store/apps/details?id=com.nadeemgs.dramatv" target="_blank" class="btn btn-playstore">
-                Download From Play Store
+                <i class="fab fa-google-play"></i> Download From Play Store <i class="fas fa-download"></i>
             </a>
-            <p class="note-text">* ग्रुप ज्वाइन होने के बाद ही प्ले स्टोर पर ऐप ओपन होगा।</p>
+            <p class="note-text"><i class="fas fa-exclamation-triangle"></i> * ग्रुप ज्वाइन होने के बाद ही प्ले स्टोर पर ऐप ओपन होगा।</p>
         </div>
 
         <div class="footer">
-            © 2026 Nadeem Gaming Studio | All Rights Reserved
+            <i class="far fa-copyright"></i> 2026 Nadeem Gaming Studio | All Rights Reserved <i class="fas fa-film"></i>
         </div>
     </div>
 
